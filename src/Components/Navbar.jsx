@@ -1,3 +1,5 @@
+import Image from "next/image";
+const { default: Link } = require("next/link")
 
 
 const Navbar = () => {
@@ -33,7 +35,9 @@ const Navbar = () => {
             <li><a>Item 3</a></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link href={"/"} className=" text-xl">
+          <Image src="/assets/logo.svg" width={50} height={50}/>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
