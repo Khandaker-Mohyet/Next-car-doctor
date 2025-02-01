@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Services from "./Components/Services";
 
 export default function Home() {
   return (
     <div>
-      This is Khandaker Mohyet Work Station
+      <Services></Services>
     </div>
   );
 }
