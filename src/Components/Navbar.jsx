@@ -1,8 +1,25 @@
 import Image from "next/image";
 const { default: Link } = require("next/link")
 
+//                                         
+
 
 const Navbar = () => {
+
+  const NavMenu =()=> {
+    return (
+      <>
+        <Link href={"/"}><li><a>Home</a></li></Link>
+        <Link href={"/about"}><li><a>About</a></li></Link>
+        <Link href={"/services"}><li><a>Services</a></li></Link>
+        <Link href={"/blog"}><li><a>Blog</a></li></Link>
+        <Link href={"/contact"}><li><a>Contact</a></li></Link>
+      </>
+      
+    )
+  }
+
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -24,38 +41,27 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a>Item 3</a></li>
+            {NavMenu()}
           </ul>
         </div>
         <Link href={"/"} className=" text-xl">
-          <Image src="/assets/logo.svg" width={50} height={50}/>
+          <Image
+            src="/assets/logo.svg"
+            width={50}
+            height={50}
+            alt="brand logo"
+          />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li><a>Item 1</a></li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a>Item 3</a></li>
+          {
+            NavMenu()
+          }
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <button className="btn btn-outline btn-secondary">Appointment</button>
       </div>
     </div>
   );
