@@ -61,6 +61,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <Link href={"/Register"}>Register</Link>
         <button className="btn btn-outline btn-secondary">Appointment</button>
       </div>
     </div>
